@@ -129,7 +129,7 @@ def draw_risk_bar(pred):
 
 def get_data_from_testset(index):
     # TODOs: get data from testset
-    data = pd.read_csv("brfss_combine_test_v2_important_20220708.csv", index_col=[0])
+    data = pd.read_csv("data/brfss_combine_test_v2_important_20220708.csv", index_col=[0])
     data.drop(["ADDEPEV3"], axis=1, inplace=True)
     index_row = data.loc[[index]].to_numpy()
     return index_row
