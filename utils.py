@@ -19,7 +19,7 @@ def st_sidebar_info():
         st.info(
             """
             Depressive related disorder risk prediction。\n
-            Data : [USA CDC BRFSS 2020 data]()
+            Data : [USA CDC BRFSS 2020 data](https://www.cdc.gov/brfss/annual_data/annual_2020.html)
             """
         )
         st.title("Contributors")
@@ -129,7 +129,9 @@ def draw_risk_bar(pred):
 
 def get_data_from_testset(index):
     # TODOs: get data from testset
-    data = pd.read_csv("data/brfss_combine_test_v2_important_20220708.csv", index_col=[0])
+    data = pd.read_csv(
+        "data/brfss_combine_test_v2_important_20220708.csv", index_col=[0]
+    )
     data.drop(["ADDEPEV3"], axis=1, inplace=True)
     index_row = data.loc[[index]].to_numpy()
     return index_row
