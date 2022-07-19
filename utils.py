@@ -3,9 +3,10 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import streamlit as st
 
+
 def st_website_setting():
     st.set_page_config(
-        page_title="Webpage title",
+        page_title="Mental Health Helper",
         page_icon="random",
         layout="centered",
         initial_sidebar_state="auto",
@@ -13,26 +14,31 @@ def st_website_setting():
 
 def st_sidebar_info():
     with st.sidebar:
-        st.title("About")
+        st.title("Introduction")
         st.info(
             """
             Depressive related disorder risk prediction。\n
-            Data : USA CDC BRFSS 2020 data
+            Data : [USA CDC BRFSS 2020 data]()
+            """
+        )
+        st.title("Contributors")
+        st.info(
+            """
+            Contributors: [Sam Shen](),
+            [Eli Chen](https://www.linkedin.com/in/jie-han-chen-325620a3/),
+            [Martin Lee](),
+            [Cobra Chen](),
+            [Allen Shiah](),
+            \n
+            Adviser: [Adms Chung](https://www.linkedin.com/in/admsc/)
             """
         )
         st.title("Contact")
-        st.info(
-            """
-            Team: 
-            [Eli Chen](), 
-            [Sam Shen](),
-            [Martin Lee](), 
-            [Cobra Chen](), 
-            [Allen Shiah](), \n
-            Director: [Adms Chung](https://www.linkedin.com/in/admsc/)
-            """
-        )
-        st.success("Contact zoro6mihawk@gmail.com if any problem was found, thanks")
+        st.info("""
+                If any problem was found, please feel free to contact us!
+                - Sam Shen: zoro6mihawk At gmail.com
+                - Eli Chen: ita3051 At gmail.com
+                """)
         st.write('''---''')
 
 def st_title_info():
@@ -59,10 +65,10 @@ def draw_risk_bar(pred):
     cmap = mpl.cm.YlOrRd
     norm = mpl.colors.Normalize(vmin=0, vmax=1)
     cbar = fig.colorbar(mpl.cm.ScalarMappable(norm=norm, cmap=cmap),
-                    cax=ax, orientation='horizontal', 
+                    cax=ax, orientation='horizontal',
                     ticks=[0, 0.2, 0.4, 0.6, 0.8, 1])
     ax.set_title("Your risk stratification")
-    cbar.ax.set_xticklabels(['No risk', 'Low', 'Medium', 'High', 'Very high', 'Extreme high'])   
+    cbar.ax.set_xticklabels(['No risk', 'Low', 'Medium', 'High', 'Very high', 'Extreme high'])
     cbar.ax.plot([pred, pred], [0, 1], 'black', linewidth=2)
     cbar.ax.plot([pred, pred], [0.9, 1], color='grey', marker='v', linewidth=0.10)
     cbar.ax.plot([pred, pred], [0, 0.1], color='grey', marker='^', linewidth=0.10)
@@ -72,4 +78,4 @@ def get_data_from_testset(index):
     data = pd.read_csv('brfss_combine_test_v2_important_20220708.csv', index_col=[0])
     data.drop(["ADDEPEV3"], axis=1, inplace=True)
     index_row = data.loc[[index]].to_numpy()
-    return index_row 
+    return index_row
