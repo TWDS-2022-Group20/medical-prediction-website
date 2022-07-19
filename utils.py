@@ -7,7 +7,7 @@ import streamlit as st
 def st_website_setting():
     st.set_page_config(
         page_title="Mental Health Helper",
-        page_icon="random",
+        page_icon="💙",
         layout="centered",
         initial_sidebar_state="auto",
     )
