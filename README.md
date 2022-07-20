@@ -35,7 +35,7 @@ pip install -r requirement-macOS.txt
 - Eli Chen 陳杰翰 (ita3051 at gmail.com)
 
 ## How to contribute to this repository?
-In this project, we still have a lot rooms to improve. for example, the integration CI/CD development tool and doing some depth research on modeling the flow of questionnaires as well.
+This project still has a lot rooms to improve. for example, the integration CI/CD development tool and doing some depth research on modeling the flow of questionnaires.
 
 Any contributions are welcome, and please follow GitHub flow when issuing a pull request.
 
