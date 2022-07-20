@@ -20,14 +20,15 @@ It will open a website with your default browser.
 1. creata a virtual environement with pyenv or venv
 2. activate the virtual environment, and then install the python packages through:
 ```
-pip install -r requirements.txt
+pip install -r requirements/requirements.txt
 ```
 
 - macOS (M1 chips)
 1. create a virual environment with conda
 2. activate the conda environment and then install python packages throguh:
 ```
-pip install -r requirement-macOS.txt
+pip install -r requirements/requirement-macOS.txt
+bash requirements/conda_package_install.sh
 ```
 
 ## Main Contributors
