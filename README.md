@@ -1,5 +1,8 @@
 # Mental Health Helper 心理健康小幫手
 
+The Mental Health Helper is a web service to predict the risk of getting depression. We extract some questoinnaries from CDC of The United States and build a model with LightGBM to estimate the probability of having depression. Because the respondents in our training data are mostly American, this application may have some drifts when being applied to those people who are not living in the United States. However, in our opinion, it is worthy to conduct such experiment, because the selected questionnaires are very general compared to traditional mental health related questionnaries like: PHQ-9. It is more likely to find out the potential and help them in the early stage of depression.
+
+
 ## How to launch our service?
 
 [Local Service]
@@ -11,11 +14,8 @@ $ streamlit run depression_predictor.py
 
 It will open a website with your default browser.
 
-[Build with Server]
-
-TBD
-
 ## Quick Installation
+
 - Windows
 1. creata a virtual environement with pyenv or venv
 2. activate the virtual environment, and then install the python packages through:
@@ -43,4 +43,4 @@ Thanks,
 Team of Mental Health Helper
 
 ## License
-MIT License
+The MIT License
