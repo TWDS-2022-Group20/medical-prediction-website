@@ -107,23 +107,24 @@ def generate_user_input_df():
 
 
 def draw_risk_bar(pred):
-    fig, ax = plt.subplots(figsize=(6, 1))
+    fig, ax = plt.subplots(figsize=(0.2, 3))
     fig.subplots_adjust(bottom=0.5)
     cmap = mpl.cm.YlOrRd
     norm = mpl.colors.Normalize(vmin=0, vmax=1)
     cbar = fig.colorbar(
         mpl.cm.ScalarMappable(norm=norm, cmap=cmap),
         cax=ax,
-        orientation="horizontal",
+        orientation="vertical",
         ticks=[0.0, 0.231, 0.5, 0.734, 0.851, 0.898],
     )
-    ax.set_title("Your risk stratification")
-    cbar.ax.set_xticklabels(
-        ["No risk", "Low", "Medium", "High", "Very high", "Extreme high"]
+    ax.set_title("Your risk stratification", fontsize=8)
+    cbar.ax.set_yticklabels(
+        ["No risk", "Low", "Medium", "High", "Very high", "Extreme high"],
+        fontsize=5,
     )
-    cbar.ax.plot([pred, pred], [0, 1], "black", linewidth=2)
-    cbar.ax.plot([pred, pred], [0.9, 1], color="grey", marker="v", linewidth=0.10)
-    cbar.ax.plot([pred, pred], [0, 0.1], color="grey", marker="^", linewidth=0.10)
+    cbar.ax.plot([0, 1], [pred, pred], "black", linewidth=0.50)
+    cbar.ax.plot([0], [pred], color="grey", marker=">", linewidth=0.05)
+    cbar.ax.plot([1], [pred], color="grey", marker="<", linewidth=0.05)
     return fig
 
 
