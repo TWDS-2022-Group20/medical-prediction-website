@@ -69,9 +69,9 @@ st.image(prediction, caption="")
 
 st.markdown("### --- Step 5: Check your result ---")
 st.write(
-    """Now your result is avaliable. You will see a score indicating the risk and a color spectrum showing your risk stratification. 
+    """Now your result is avaliable. You will see a level indicating the risk and a color spectrum showing your risk stratification. 
 Please consult medical professionals if any problem. Never mistake this application as a precise diagnostic tool.
 Thanks you very much!"""
 )
-result = Image.open(os.path.dirname(__file__) + "/user_guide_images/result.JPG")
+result = Image.open(os.path.dirname(__file__) + "/user_guide_images/result2.png")
 st.image(result, caption="")
