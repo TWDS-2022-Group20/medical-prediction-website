@@ -47,12 +47,12 @@ def st_sidebar_info():
         st.write("""---""")
 
 
-def st_title_info():
-    st.title("Depressive Mood Disorder Predictor")
+def st_title_info(title="Depressive Mood Disorder Predictor"):
+    st.title(title)
     st.subheader(
         """
-    This application will help you to identifiy the risk stratification of depressive mood related disorders.
-    """,
+        This application will help you to identifiy the risk stratification of depressive mood related disorders.
+        """,
         anchor=None,
     )
     st.write("Thanks for using our product!")

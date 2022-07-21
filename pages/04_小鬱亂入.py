@@ -3,8 +3,9 @@ import os
 import streamlit as st
 from PIL import Image
 
+from utils import st_website_setting
 
-st.set_page_config(page_title="小鬱亂入")
+st_website_setting(page_title="小鬱亂入")
 st.title("小鬱亂入")
 st.write(
     """
@@ -19,5 +20,6 @@ st.markdown(
             """
 )
 
-landing_img = Image.open(os.path.dirname(__file__)+'/depressytrouble/landing.jpeg')
-st.image(landing_img, caption='')
+landing_img = Image.open(os.path.dirname(__file__) + "/depressytrouble/landing.jpeg")
+st.image(landing_img, caption="")
+

@@ -10,13 +10,13 @@ from utils import *
 
 
 ###### webpage settings ######
-st_website_setting(page_title="Depression Predictor")
+st_website_setting(page_title="Care Your Mind")
 
 ###### sidebar info ######
 st_sidebar_info()
 
 ###### Main page title and user guide
-st_title_info()
+st_title_info(title="Care Your Mind")
 
 ###### user info block ####
 df_user_answer = generate_user_input_df()

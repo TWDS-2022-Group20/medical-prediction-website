@@ -6,7 +6,7 @@ from PIL import Image
 from utils import st_website_setting
 
 
-st_website_setting(page_title="Health Education")
+st_website_setting(page_title="Health Information")
 
 st.title("About Depression Mood Disorders")
 st.write(
