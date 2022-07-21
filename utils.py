@@ -115,7 +115,7 @@ def draw_risk_bar(pred):
         mpl.cm.ScalarMappable(norm=norm, cmap=cmap),
         cax=ax,
         orientation="horizontal",
-        ticks=[0, 0.2, 0.4, 0.6, 0.8, 1],
+        ticks=[0.0, 0.231, 0.5, 0.734, 0.851, 0.898],
     )
     ax.set_title("Your risk stratification")
     cbar.ax.set_xticklabels(
