@@ -6,7 +6,7 @@ from user_answer_preprocess import *
 from utils import *
 
 ###### webpage settings ######
-st_website_setting()
+st_website_setting(page_title="Depression Predictor")
 
 ###### sidebar info ######
 st_sidebar_info()

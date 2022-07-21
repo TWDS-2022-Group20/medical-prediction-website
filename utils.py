@@ -4,11 +4,13 @@ import pandas as pd
 import streamlit as st
 
 
-def st_website_setting():
+def st_website_setting(page_title):
+    """This function setup some information appear on top of the browser's page
+    """
     st.set_page_config(
-        page_title="Mental Health Helper",
-        page_icon="💙",
+        page_title=page_title,
         layout="centered",
+        page_icon="💙",
         initial_sidebar_state="auto",
     )
 
