@@ -108,6 +108,35 @@ def generate_user_input_df():
     return df_user_answer
 
 
+# Risk stratification
+levels_to_risk = {
+    0: "Very Low",
+    1: "Low",
+    2: "Medium",
+    3: "High",
+    4: "Very High",
+    5: "Much Higher",
+}
+
+
+def decode_pred(pred):
+    if pred > 0.898:
+        return 5
+    if pred > 0.851:
+        return 4
+    if pred > 0.734:
+        return 3
+    if pred > 0.500:
+        return 2
+    if pred > 0.231:
+        return 1
+    if pred >= 0.000:
+        return 0
+    else:
+        # TODO logging
+        print("unexpected value: {}.format(pred")
+
+
 def draw_risk_bar(pred):
     fig, ax = plt.subplots(figsize=(6, 1))
     fig.subplots_adjust(bottom=0.5)
