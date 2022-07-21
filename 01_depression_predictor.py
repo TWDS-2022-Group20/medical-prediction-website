@@ -1,9 +1,13 @@
 import time
+
 import streamlit as st
 import joblib
+from PIL import Image
+
 from flare.inference import ProbabilisticBinaryClassifier
 from user_answer_preprocess import *
 from utils import *
+
 
 ###### webpage settings ######
 st_website_setting(page_title="Depression Predictor")
@@ -309,13 +313,19 @@ with st.container():
         st.write("---")
         show_result = True
 
-###### Result block ######
+
+# Show result
 if show_result:
+    risk_level = decode_pred(pred)
+    risk_ = levels_to_risk[risk_level]
+    image = Image.open("images/risk-levels.png".format(risk_))
+
     with st.container():
-        st.subheader("Your prediction result")
         st.markdown(
-            f'##### Your predicted risk is around: <p style="color:Blue;font-size:24px;border-radius:2%;">***{round(pred, 4)*100}%***</p>',
-            unsafe_allow_html=True,
+            f"##### Your predicted risk is around: {risk_} (level {risk_level}) #####"
         )
-        st.pyplot(draw_risk_bar(pred))
-###### health education block ######
+        # TODO render the image with .svg
+        st.image(image)
+
+        # TODO suggesting actions to take
+        pass
