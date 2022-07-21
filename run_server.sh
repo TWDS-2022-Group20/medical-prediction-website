@@ -1,1 +1,1 @@
-streamlit run depression_predictor.py
+streamlit run 01_depression_predictor.py

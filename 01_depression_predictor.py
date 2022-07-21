@@ -14,7 +14,7 @@ st_sidebar_info()
 ###### Main page title and user guide
 st_title_info()
 
-###### user info block ######
+###### user info block ####
 df_user_answer = generate_user_input_df()
 with st.container():
     st.subheader("User basic info")
@@ -290,7 +290,8 @@ with st.container():
 ###### Model prediction ######
 submit = st.button("Start prediction")
 light_GBM_model = ProbabilisticBinaryClassifier(
-    joblib.load("models/LGBMClassifier-testing-2022-07-09_19_04_48.pkl"), prob_threshold=None
+    joblib.load("models/LGBMClassifier-testing-2022-07-09_19_04_48.pkl"),
+    prob_threshold=None,
 )
 user_answer = df_user_answer.loc[[0]].to_numpy()
 # st.write(get_data_from_testset(361014))
